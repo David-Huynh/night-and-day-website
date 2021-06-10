@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Clock from './clock'
 import { Link } from 'gatsby'
-import { container, header, navBarName, navBar, navList, link, text_color_high_emph,text_color_medium_emph} from './layout.module.css'
+import { container, header, navBarName, navBar, navList, link, text_color_high_emph, body, footer} from './layout.module.css'
 
 const Layout = ({ titleName, children }) => {
     return (
@@ -25,10 +25,11 @@ const Layout = ({ titleName, children }) => {
                 <h1 className={text_color_high_emph}>{titleName}</h1>
                 <Clock className={text_color_high_emph}/>
             </div>
-            
-            {children}
-            <div>
-
+            <div className={body}>
+                {children}
+            </div>
+            <div className={footer}>
+                Filler Footer Links
             </div>
         </main>
     )

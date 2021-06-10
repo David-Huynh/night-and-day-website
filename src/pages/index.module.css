@@ -6,3 +6,6 @@ h2,h3,p{
     color: #000000;
     opacity: 0.77;
 }
+.body{
+    flex: 1;
+}
