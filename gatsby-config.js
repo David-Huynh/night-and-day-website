@@ -29,17 +29,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-next-seo',
-      options: {
-        openGraph: {
-          type: 'website',
-          locale: 'en_IE',
-          url: 'https://www.dhuynh.ca/',
-          site_name: 'dhuynh',
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://dhuynh.ca',
