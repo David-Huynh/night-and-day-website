@@ -1,14 +1,16 @@
 import * as React from "react";
 import styled from "styled-components";
 import { setToLS, getFromLS } from "../utils/local-storage";
+import { themes } from "../theme/themes";
+
+//TODO: add GIF movement
+
 //Styles h2 for Page Title
 const TextStyle = styled.h1`
   color: ${({ theme }) => theme.primaryVariant};
 `;
 //Clock Component references the World Time Api to keep track of the time in Toronto and renders it
-const Clock = () => {
-  //TODO: Add switching of themes at 9:00pm toronto time
-
+const Clock = ({ parentCallback }) => {
   //Initial Clock State from Local storage o/w default to 00:00AM
   const [time, setTime] = React.useState(
     getFromLS("timeState") ? getFromLS("timeState") : "00:00AM"
@@ -34,7 +36,27 @@ const Clock = () => {
         hour = hour - 12;
         am_pm = "PM";
       }
-
+      if (
+        (hour >= 11 && am_pm === "PM") ||
+        (hour === 12 && am_pm === "AM") ||
+        (hour >= 1 && hour <= 6 && am_pm === "AM")
+      ) {
+        if (getFromLS("theme") !== themes.dark) {
+          parentCallback(themes.dark);
+          setToLS("theme", themes.dark);
+        }
+        if (!getFromLS("theme")) {
+          setToLS("theme", themes.dark);
+        }
+      } else {
+        if (getFromLS("theme") !== themes.light) {
+          parentCallback(themes.light);
+          setToLS("theme", themes.light);
+        }
+        if (!getFromLS("theme")) {
+          setToLS("theme", themes.light);
+        }
+      }
       var minute = timeArray[1];
       return hour + ":" + minute + am_pm;
     }
@@ -68,7 +90,7 @@ const Clock = () => {
     return function cleanup() {
       clearInterval(timerID);
     };
-  }, []);
+  }, [parentCallback]);
 
   return <TextStyle>{time}</TextStyle>;
 };

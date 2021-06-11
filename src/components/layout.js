@@ -1,36 +1,14 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
+import styled, { ThemeProvider } from "styled-components";
 
 import Clock from "./clock";
 import Header from "./header";
 import Footer from "./footer";
 
-import { Helmet } from "react-helmet";
-import styled, { ThemeProvider } from "styled-components";
-
+import { getFromLS } from "../utils/local-storage";
+import { themes } from "../theme/themes";
 import { GlobalStyles } from "../theme/GlobalStyles";
-
-const themes = {
-  light: {
-    foreground: "#000000",
-    background: "#FFFFFF",
-    backgroundOpacity: 1,
-    primaryColor: "#8034c6",
-    primaryVariant: "#9b59d7",
-    highEmphText: 0.87,
-    mediumEmphText: 0.77,
-    fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  },
-  dark: {
-    foreground: "#FFFFFF",
-    background: "#121212",
-    backgroundOpacity: 0.87,
-    primaryColor: "#8034c6",
-    primaryVariant: "#ae79df",
-    highEmphText: 0.87,
-    mediumEmphText: 0.67,
-    fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  },
-};
 
 const Container = styled.main`
   display: flex;
@@ -59,12 +37,12 @@ const Body = styled.div`
 
 const Layout = ({ titleName, children }) => {
   //TODO: draw background gif thing
-  const [selectedTheme, setSelectedTheme] = React.useState(themes.light);
-
-  //Loads theme into state
-  React.useEffect(() => {
-    setSelectedTheme(themes.light);
-  }, []);
+  const [selectedTheme, setSelectedTheme] = React.useState(
+    getFromLS("theme") ? getFromLS("theme") : themes.light
+  );
+  const themeCallback = (childSelection) => {
+    setSelectedTheme(childSelection);
+  };
   return (
     <ThemeProvider theme={selectedTheme}>
       {/*Loads global styling*/}
@@ -102,7 +80,7 @@ const Layout = ({ titleName, children }) => {
           >
             {titleName}
           </h1>
-          <Clock />
+          <Clock parentCallback={themeCallback} currentTheme={selectedTheme} />
         </TitleHeader>
         <Body>{children}</Body>
         <Footer />

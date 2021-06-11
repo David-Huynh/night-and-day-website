@@ -13,14 +13,17 @@ const IndexPage = () => {
       <p>
         Welcome! I'm David, a second year Machine Learning and Statistics
         student at the University of Toronto. Aspiring Developer by day, video
-        game enjoyer by night, also artist(maybe)
+        game enjoyer by night, also homecook, and artist(pending).
       </p>
       <br />
-      <p>Lorem Ipsum filler text</p>
+      <p>
+        You might have noticed a GIF(WIP) in the background, it represents what I'm
+        usually doing at that time of the day.
+      </p>
       <br />
       <p>
-        This site transitions into "night" mode after 9:00pm Toronto time stick
-        around to see how it looks.
+        This site transitions into "night" mode after 11:00pm Toronto time and
+        back to "day" mode after 6:00am stick around to see how it looks.
       </p>
     </Layout>
   );

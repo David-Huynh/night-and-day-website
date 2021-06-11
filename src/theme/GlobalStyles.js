@@ -6,7 +6,6 @@ export const GlobalStyles = createGlobalStyle`
         opacity:${({ theme }) => theme.backgroundOpacity};
         color: ${({ theme }) => theme.primaryColor};
         font-family: ${({ theme }) => theme.fontFamily};
-        transition: all 1.0s linear;
     }
 
     p {
