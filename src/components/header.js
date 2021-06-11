@@ -46,7 +46,7 @@ const NavItems = styled(Link)`
     }
 `;
 
-const Header = ({ titleName, children }) => {
+const Header = () => {
     return (
         <HeaderContainer>
             <GlobalStyles/>

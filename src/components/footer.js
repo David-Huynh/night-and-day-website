@@ -7,7 +7,7 @@ const FooterStyle = styled.div`
     align-self: center;
 `;
 
-const Footer = ({ titleName, children }) => {
+const Footer = () => {
     return (
         <FooterStyle>
             <GlobalStyles/>
