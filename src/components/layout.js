@@ -35,13 +35,16 @@ const Body = styled.div`
   flex: 1;
 `;
 
-const Layout = ({ titleName, children }) => {
+const Layout = ({ titleName, parentThemeCallback, children }) => {
   //TODO: draw background gif thing
   const [selectedTheme, setSelectedTheme] = React.useState(
     getFromLS("theme") ? getFromLS("theme") : themes.light
   );
   const themeCallback = (childSelection) => {
     setSelectedTheme(childSelection);
+    if (parentThemeCallback){
+      parentThemeCallback(childSelection);
+    }
   };
   return (
     <ThemeProvider theme={selectedTheme}>

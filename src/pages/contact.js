@@ -2,6 +2,8 @@ import * as React from "react";
 import Layout from "../components/layout";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
+import { themes } from "../theme/themes";
+import { getFromLS } from "../utils/local-storage";
 
 //Styles the phonenumber text
 const Cell = styled.p`
@@ -20,17 +22,28 @@ const Link = styled.a`
 `;
 
 const ContactPage = () => {
-  //TODO: Change text according to theme state
+  const [selectedTheme, setSelectedTheme] = React.useState(
+    getFromLS("theme") ? getFromLS("theme") : themes.light
+  );
+  const themeCallback = (childTheme) => {
+    setSelectedTheme(childTheme);
+  };
   return (
     //RENDERS CONTACT INFO
-    <Layout titleName="Contact Info">
+    <Layout titleName="Contact Info" parentThemeCallback={themeCallback}>
       <Helmet>
         <meta name="description" content="Contact Info page" />
       </Helmet>
-      <p>
-        It's currently day where I live and I should be available to answer the
-        phone
-      </p>
+      {/* Renders certain text depending on the time of the day */}
+      {selectedTheme == themes.light && (
+        <p>
+          It's currently day where I live and I should be available to answer
+          the phone
+        </p>
+      )}
+      {selectedTheme == themes.dark && (
+        <p>It's currently night where I live and I might not be available</p>
+      )}
       <br />
       <Cell>
         Cell Number: <b>(647) 929-9932</b>
