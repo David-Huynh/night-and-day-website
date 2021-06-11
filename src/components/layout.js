@@ -76,8 +76,8 @@ const Layout = ({ titleName, children }) => {
                     <meta name="description" content="Layout Template, contains header and footer"/>
                     <html lang="en"/>
                     <title>{ titleName }</title>
-
-                    
+                    {/* IMPORTS FONTS FOR THE HEADER "LOGO" */}
+                    <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" onload="onload=null;rel='stylesheet'"/>
                 </Helmet>
                 <Header/>
                 {/* RENDERS THE PAGE TITLE AND CLOCK COMPONENT */}
@@ -91,9 +91,6 @@ const Layout = ({ titleName, children }) => {
                 <Footer/>
                 
             </Container>
-            {/* IMPORTS FONTS FOR THE HEADER "LOGO" */}
-            <link rel="preconnect" href="https://fonts.gstatic.com"/>
-            <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet"/>
         </ThemeProvider>
     )
 }
