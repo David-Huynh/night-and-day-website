@@ -35,21 +35,20 @@ const ContactPage = () => {
         <meta name="description" content="Contact Info page" />
       </Helmet>
       {/* Renders certain text depending on the time of the day */}
-      {selectedTheme == themes.light && (
+      {selectedTheme === themes.light && (
         <p>
           It's currently day where I live and I should be available to answer
-          the phone
+          the phone.
         </p>
       )}
-      {selectedTheme == themes.dark && (
-        <p>It's currently night where I live and I might not be available</p>
+      {selectedTheme === themes.dark && (
+        <p>It's currently night where I live and I might not be available.</p>
       )}
       <br />
       <Cell>
-        Cell Number: <b>(647) 929-9932</b>
+        <b>(647) 929-9932</b>
       </Cell>
       <Mail>
-        Email:{" "}
         <b>
           <Link href="mailto:huynh.david.work@gmail.com">
             huynh.david.work@gmail.com
