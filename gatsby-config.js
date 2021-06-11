@@ -11,15 +11,13 @@ module.exports = {
         name: "DavidSite",
         short_name: "DavidSite",
         start_url: "/",
-        background_color: "#FFFFFF",
-        theme_color: "#ae79df",
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
-        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        background_color: "#FFF",
+        theme_color: "#8034c6",
         display: "standalone",
-        icon: "src/images/icon.png", // This path is relative to the root of the site.
-        // An optional attribute which provides support for CORS check.
-        // If you do not provide a crossOrigin option, it will skip CORS for manifest.
-        // Any invalid keyword or empty string defaults to `anonymous`
+        icon: "src/images/icon.png",
+        icon_options: {
+          purpose: `any maskable`,
+        },
         crossOrigin: `use-credentials`,
       },
     },
