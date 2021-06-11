@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from 'styled-components';
+import { setToLS,getFromLS } from '../utils/local-storage';
 //Styles h2 for Page Title
 const TextStyle = styled.h1`
     color: ${({ theme }) => theme.primaryVariant};
@@ -10,7 +11,7 @@ const Clock = () => {
 
 
     //Initial Clock State from Local storage o/w default to 00:00AM
-    const [time, setTime] = React.useState(localStorage.getItem("timeState")? localStorage.getItem("timeState"): "00:00AM");
+    const [time, setTime] = React.useState(getFromLS("timeState")? getFromLS("timeState"): "00:00AM");
     //Sets the state and timer for the clock and retrieves from World Time API 
     //since I want the time to always be reflective of Toronto time in order to set the site logic
     //[] is required so React.useEffect doesn't track changes in state
@@ -41,7 +42,7 @@ const Clock = () => {
                     var timeParsed = parseStringToTime(date.toString());
                     setTime(timeParsed);
                     //Avoid flickering when navigating by saving timeState 
-                    localStorage.setItem('timeState', timeParsed);
+                    setToLS('timeState', timeParsed);
             });
         }
         
@@ -54,7 +55,7 @@ const Clock = () => {
                 var timeParsed = parseStringToTime(date.toString());
                 setTime(timeParsed);
                 //Avoid flickering when navigating by saving timeState 
-                localStorage.setItem('timeState', timeParsed);
+                setToLS('timeState', timeParsed);
         });
 
         //Starts interval function
