@@ -8,11 +8,11 @@ import {Helmet} from "react-helmet";
 import styled, { ThemeProvider } from 'styled-components';
 
 import { setToLS } from '../utils/local-storage';
-import * as themes from '../theme/theme.json';
+//import * as themes from '../theme/theme.json';
 import { useTheme } from '../theme/useTheme';
 import { GlobalStyles } from '../theme/GlobalStyles';
 
-const backupTheme = {
+const themes = {
     light: {
         foreground: "#000000",
         background: "#FFFFFF",
@@ -63,18 +63,15 @@ const Body = styled.div`
 
 const Layout = ({ titleName, children }) => {
     //Saves Theme to LocalStorage
-    setToLS('allThemes', themes.default);
-    const {theme, themeLoaded} = useTheme() ? useTheme() : backupTheme;
-    const [selectedTheme, setSelectedTheme] = React.useState(theme);
+    //setToLS('allThemes', themes.default);
+    const [selectedTheme, setSelectedTheme] = React.useState(themes.light);
     
     //Loads theme into state
     React.useEffect(() => {
-        if(themeLoaded){
-            setSelectedTheme(theme);
-        }
-    }, [themeLoaded]);
+        setSelectedTheme(themes.light);
+    },);
     return (
-        themeLoaded && <ThemeProvider theme={ selectedTheme }>
+        <ThemeProvider theme={ selectedTheme }>
             {/*Loads global styling*/}
             <GlobalStyles/>
             <Container style={{fontFamily: selectedTheme.fontFamily}}>
