@@ -73,7 +73,7 @@ const Layout = ({ titleName, children }) => {
         <Helmet>
           <html lang="en" />
           <meta charSet="utf-8" />
-          <title>{titleName}</title>
+          <title>David Huynh - {titleName}</title>
           <style>
             {`
             @font-face {
