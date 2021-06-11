@@ -46,7 +46,9 @@ const Layout = ({ titleName, children }) => {
     
     //Loads theme into state
     React.useEffect(() => {
-        setSelectedTheme(theme);
+        if(themeLoaded){
+            setSelectedTheme(theme);
+        }
     }, [themeLoaded]);
     return (
         themeLoaded && <ThemeProvider theme={ selectedTheme }>
