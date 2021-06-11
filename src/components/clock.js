@@ -40,11 +40,9 @@ const Clock = () => {
     }
     //Every tick the Clock gets updated
     function tick() {
-      console.log("CLOCK UPDATE");
       fetch("https://worldtimeapi.org/api/timezone/America/Toronto")
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           var date = new Date(Date.parse(data.datetime));
           var timeParsed = parseStringToTime(date.toString());
           setTime(timeParsed);
@@ -57,7 +55,6 @@ const Clock = () => {
     fetch("https://worldtimeapi.org/api/timezone/America/Toronto")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         var date = new Date(Date.parse(data.datetime));
         var timeParsed = parseStringToTime(date.toString());
         setTime(timeParsed);
