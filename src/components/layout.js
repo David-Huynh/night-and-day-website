@@ -7,9 +7,6 @@ import Footer from './footer';
 import {Helmet} from "react-helmet";
 import styled, { ThemeProvider } from 'styled-components';
 
-import { setToLS } from '../utils/local-storage';
-//import * as themes from '../theme/theme.json';
-import { useTheme } from '../theme/useTheme';
 import { GlobalStyles } from '../theme/GlobalStyles';
 
 const themes = {
@@ -62,14 +59,13 @@ const Body = styled.div`
 `;
 
 const Layout = ({ titleName, children }) => {
-    //Saves Theme to LocalStorage
-    //setToLS('allThemes', themes.default);
+    //TODO: draw background gif thing 
     const [selectedTheme, setSelectedTheme] = React.useState(themes.light);
     
     //Loads theme into state
     React.useEffect(() => {
         setSelectedTheme(themes.light);
-    },);
+    },[]);
     return (
         <ThemeProvider theme={ selectedTheme }>
             {/*Loads global styling*/}
@@ -81,9 +77,7 @@ const Layout = ({ titleName, children }) => {
                     <html lang="en"/>
                     <title>{ titleName }</title>
 
-                    {/* IMPORTS FONTS FOR THE HEADER "LOGO" */}
-                    <link rel="preconnect" href="https://fonts.gstatic.com"/>
-                    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet"/>
+                    
                 </Helmet>
                 <Header/>
                 {/* RENDERS THE PAGE TITLE AND CLOCK COMPONENT */}
@@ -95,7 +89,11 @@ const Layout = ({ titleName, children }) => {
                     {children}
                 </Body>
                 <Footer/>
+                
             </Container>
+            {/* IMPORTS FONTS FOR THE HEADER "LOGO" */}
+            <link rel="preconnect" href="https://fonts.gstatic.com"/>
+            <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet"/>
         </ThemeProvider>
     )
 }

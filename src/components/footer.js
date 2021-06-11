@@ -8,13 +8,10 @@ const FooterStyle = styled.div`
 `;
 
 const Footer = ({ titleName, children }) => {
-    //TODO: Add footer icons and links
     return (
         <FooterStyle>
             <GlobalStyles/>
-            <a href="https://www.linkedin.com/in/david-huynh-/" target="_blank"><FaLinkedinIn/></a>
-            <a></a>
-            <a></a>
+            <a href="https://www.linkedin.com/in/david-huynh-/" rel="noopener noreferrer"  target="_blank"><FaLinkedinIn aria-label="Linkedin Page" size={28}/></a>
         </FooterStyle>
     );
 };

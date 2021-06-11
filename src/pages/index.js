@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import {Helmet} from "react-helmet";
 
 const IndexPage = () => {
-
+    //TODO: Add more text and remove lorem ipsum
     return (
         //RENDERS LAYOUT + Blurb
         <Layout titleName="Seeking">
