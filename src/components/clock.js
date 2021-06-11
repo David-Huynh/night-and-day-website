@@ -24,10 +24,16 @@ const Clock = () => {
             if (hour === 12){
                 am_pm="PM";
             }
+            console.log(hour)
+            if (hour === "00"){
+                hour = 12;
+                am_pm="AM";
+            }
             if (hour > 12){
                 hour = hour - 12;
                 am_pm = "PM";
             }
+            
             var minute = timeArray[1];
             return hour + ":" + minute+am_pm;
         }
