@@ -20,6 +20,7 @@ const Link = styled.a`
 `;
 
 const ContactPage = () => {
+    //TODO: Change text according to theme state
     return (
         //RENDERS CONTACT INFO
         <Layout titleName="Contact Info">
