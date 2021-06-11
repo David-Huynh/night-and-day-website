@@ -1,21 +1,21 @@
 import * as React from "react";
-import Layout from '../components/layout';
+import Layout from "../components/layout";
 import { Link } from "gatsby";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 // markup
 const NotFoundPage = () => {
-    return (
-        <Layout titleName="404">
-            <Helmet>
-                <meta name="description" content="404 Page Not Found"/>
-            </Helmet>
-            <p>
-                Sorry we couldn’t find what you were looking for.
-                <br />
-                <Link to="/">Go home</Link>.
-            </p>
-        </Layout>
-    );
+  return (
+    <Layout titleName="404">
+      <Helmet>
+        <meta name="description" content="404 Page Not Found" />
+      </Helmet>
+      <p>
+        Sorry we couldn’t find what you were looking for.
+        <br />
+        <Link to="/">Go home</Link>.
+      </p>
+    </Layout>
+  );
 };
 
 export default NotFoundPage;
