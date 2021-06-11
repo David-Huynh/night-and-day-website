@@ -7,7 +7,7 @@ const TextStyle = styled.h1`
 `;
 //Clock Component references the World Time Api to keep track of the time in Toronto and renders it
 const Clock = () => {
-    //TODO: Add switching of themes at 9:00pm
+    //TODO: Add switching of themes at 9:00pm toronto time
 
 
     //Initial Clock State from Local storage o/w default to 00:00AM
