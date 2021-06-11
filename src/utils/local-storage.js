@@ -1,11 +1,15 @@
 export const setToLS = (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value));
+    if (typeof window !== 'undefined') {
+        localStorage.setItem(key, JSON.stringify(value));
+    }
 }
   
 export const getFromLS = key => {
-    const value = localStorage.getItem(key);
-
-    if (value) {
-        return JSON.parse(value);
+    if (typeof window !== 'undefined') {
+        const value = localStorage.getItem(key);
+        if (value) {
+            return JSON.parse(value);
+        }
     }
+    
 }
