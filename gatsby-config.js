@@ -21,14 +21,5 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Monoton`,
-        ],
-        display: 'swap'
-      }
-    },
   ],
 };

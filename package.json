@@ -18,7 +18,6 @@
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.6.2",
     "gatsby-plugin-gatsby-cloud": "^2.7.0",
-    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-react-helmet": "^4.7.0",
     "gatsby-plugin-robots-txt": "^1.6.2",
     "gatsby-plugin-sitemap": "^4.3.1",

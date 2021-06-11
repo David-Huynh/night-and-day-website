@@ -71,13 +71,25 @@ const Layout = ({ titleName, children }) => {
       <GlobalStyles />
       <Container style={{ fontFamily: selectedTheme.fontFamily }}>
         <Helmet>
+          <html lang="en" />
           <meta charSet="utf-8" />
+          <title>{titleName}</title>
+          <style>
+            {`
+            @font-face {
+              font-family: 'Monoton';
+              font-style: normal;
+              font-weight: 400;
+              font-display: swap;
+              src: url(https://fonts.gstatic.com/s/monoton/v10/5h1aiZUrOngCibe4TkHLQg.woff2) format('woff2');
+              unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+          `}
+          </style>
           <meta
             name="description"
             content="Layout Template, contains header and footer"
           />
-          <html lang="en" />
-          <title>{titleName}</title>
         </Helmet>
         <Header />
         {/* RENDERS THE PAGE TITLE AND CLOCK COMPONENT */}

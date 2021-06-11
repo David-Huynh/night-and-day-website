@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import MobileNav from "./mobile-nav";
 import { GlobalStyles } from "../theme/GlobalStyles";
+import { Helmet } from "react-helmet";
 //Styles Div for Header Container
 const HeaderContainer = styled.div`
   width: 100%;
