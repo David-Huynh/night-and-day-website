@@ -36,7 +36,7 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
-    'gatsby-plugin-next-seo',
+
     `gatsby-plugin-offline`,
   ],
 };
