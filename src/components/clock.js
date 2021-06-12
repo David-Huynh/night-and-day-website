@@ -40,16 +40,13 @@ const Clock = ({ parentCallback }) => {
         am_pm = "PM";
       }
       //Changes the theme depending on the time of the day
-      //Only changes theme if theme has changed to prevent rerendering
       if (
         (hour >= 11 && am_pm === "PM") ||
         (hour === 12 && am_pm === "AM") ||
-        (hour >= 1 && hour <= 6 && am_pm === "AM")
+        (hour >= 1 && hour <= 11 && am_pm === "AM")
       ) {
-        setToLS("theme", themes.dark);
         parentCallback(themes.dark);
       } else {
-        setToLS("theme", themes.light);
         parentCallback(themes.light);
       }
       var minute = timeArray[1];

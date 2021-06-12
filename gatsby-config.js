@@ -11,6 +11,7 @@ module.exports = {
         name: "DavidSite",
         short_name: "DavidSite",
         start_url: "/",
+        description: "My portfolio",
         background_color: "#FFF",
         theme_color: "#8034c6",
         display: "standalone",
