@@ -56,7 +56,9 @@ const Clock = ({ parentCallback }) => {
     }
     //Every tick the Clock gets updated
     function tick() {
-      fetch("https://worldtimeapi.org/api/timezone/America/Toronto")
+      fetch("https://worldtimeapi.org/api/timezone/America/Toronto",{
+        mode: 'no-cors'
+      })
         .then((response) => response.json())
         .then((data) => {
           var date = new Date(Date.parse(data.datetime));
@@ -68,7 +70,9 @@ const Clock = ({ parentCallback }) => {
     }
 
     //First Manual Tick
-    fetch("https://worldtimeapi.org/api/timezone/America/Toronto")
+    fetch("https://worldtimeapi.org/api/timezone/America/Toronto",{
+      mode: 'no-cors'
+    })
       .then((response) => response.json())
       .then((data) => {
         var date = new Date(Date.parse(data.datetime));
