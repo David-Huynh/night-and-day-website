@@ -1,4 +1,5 @@
 import * as React from "react";
+import { DateTime } from "luxon";
 import styled from "styled-components";
 import { setToLS, getFromLS } from "../utils/local-storage";
 import { themes } from "../theme/themes";
@@ -56,31 +57,19 @@ const Clock = ({ parentCallback }) => {
     }
     //Every tick the Clock gets updated
     function tick() {
-      fetch("https://worldtimeapi.org/api/timezone/America/Toronto",{
-        mode: 'no-cors'
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          var date = new Date(Date.parse(data.datetime));
-          var timeParsed = parseStringToTime(date.toString());
-          setTime(timeParsed);
-          //Avoid flickering when navigating by saving timeState
-          setToLS("timeState", timeParsed);
-        });
+      var date = DateTime.now().setZone("America/Toronto");
+      var timeParsed = parseStringToTime(date.toString());
+      setTime(timeParsed);
+      //Avoid flickering when navigating by saving timeState
+      setToLS("timeState", timeParsed);
     }
 
     //First Manual Tick
-    fetch("https://worldtimeapi.org/api/timezone/America/Toronto",{
-      mode: 'no-cors'
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        var date = new Date(Date.parse(data.datetime));
-        var timeParsed = parseStringToTime(date.toString());
-        setTime(timeParsed);
-        //Avoid flickering when navigating by saving timeState
-        setToLS("timeState", timeParsed);
-      });
+    var date = DateTime.now().setZone("America/Toronto");
+    var timeParsed = parseStringToTime(date.toString());
+    setTime(timeParsed);
+    //Avoid flickering when navigating by saving timeState
+    setToLS("timeState", timeParsed);
 
     //Starts interval function
     var timerID = setInterval(() => tick(), 10000);
