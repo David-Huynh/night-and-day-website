@@ -24,7 +24,7 @@ const Container = styled.main`
   }
 `;
 const StyledTitle = styled.h1`
-  color: ${({ theme }) => theme.primaryColor};
+  color: ${({ theme }) => theme.foreground};
   opacity: ${({ theme }) => theme.highEmphText};
 `;
 const TitleHeader = styled.div`
