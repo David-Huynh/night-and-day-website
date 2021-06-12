@@ -11,6 +11,7 @@ import { themes } from "../theme/themes";
 import { GlobalStyles } from "../theme/GlobalStyles";
 
 const Container = styled.main`
+  fontFamily: ${({ theme }) => theme.fontFamily};
   display: flex;
   min-height: 98vh;
   flex-direction: column;
@@ -21,6 +22,10 @@ const Container = styled.main`
     margin-left: 10%;
     margin-right: 10%;
   }
+`;
+const StyledTitle = styled.h1`
+  color: ${({ theme }) => theme.primaryColor};
+  opacity: ${({ theme }) => theme.highEmphText};
 `;
 const TitleHeader = styled.div`
   width: 100%;
@@ -37,6 +42,7 @@ const Body = styled.div`
 
 const Layout = ({ titleName, parentThemeCallback, children }) => {
   //TODO: draw background gif thing
+  //TODO: maybe fix ctrl shift r, header using light theme
   const [selectedTheme, setSelectedTheme] = React.useState(
     getFromLS("theme") ? getFromLS("theme") : themes.light
   );
@@ -50,7 +56,7 @@ const Layout = ({ titleName, parentThemeCallback, children }) => {
     <ThemeProvider theme={selectedTheme}>
       {/*Loads global styling*/}
       <GlobalStyles />
-      <Container style={{ fontFamily: selectedTheme.fontFamily }}>
+      <Container>
         <Helmet>
           <html lang="en" />
           <meta charSet="utf-8" />
@@ -75,15 +81,10 @@ const Layout = ({ titleName, parentThemeCallback, children }) => {
         <Header />
         {/* RENDERS THE PAGE TITLE AND CLOCK COMPONENT */}
         <TitleHeader>
-          <h1
-            style={{
-              color: selectedTheme.foreground,
-              opacity: selectedTheme.highEmphText,
-            }}
-          >
+          <StyledTitle>
             {titleName}
-          </h1>
-          <Clock parentCallback={themeCallback} currentTheme={selectedTheme} />
+          </StyledTitle>
+          <Clock parentCallback={themeCallback} />
         </TitleHeader>
         <Body>{children}</Body>
         <Footer />
