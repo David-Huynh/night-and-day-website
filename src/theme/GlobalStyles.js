@@ -7,7 +7,10 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.primaryColor};
         font-family: ${({ theme }) => theme.fontFamily};
     }
-
+    a{
+        text-decoration: none;
+        color: ${({ theme }) => theme.primaryColor};
+    }
     p {
         color: ${({ theme }) => theme.foreground};
         opacity: ${({ theme }) => theme.mediumEmphText};

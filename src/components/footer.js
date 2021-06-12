@@ -10,7 +10,7 @@ const FooterStyle = styled.div`
 const Footer = () => {
   return (
     <FooterStyle>
-      <GlobalStyles />
+      <GlobalStyles/>
       <a
         href="https://www.linkedin.com/in/david-huynh-/"
         rel="noopener noreferrer"
