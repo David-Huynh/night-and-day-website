@@ -72,7 +72,7 @@ const Clock = ({ parentCallback }) => {
     setToLS("timeState", timeParsed);
 
     //Starts interval function
-    var timerID = setInterval(() => tick(), 10000);
+    var timerID = setInterval(() => tick(), 1000);
 
     return function cleanup() {
       clearInterval(timerID);
