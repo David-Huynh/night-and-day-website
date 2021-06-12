@@ -43,7 +43,7 @@ const Clock = ({ parentCallback }) => {
       if (
         (hour >= 11 && am_pm === "PM") ||
         (hour === 12 && am_pm === "AM") ||
-        (hour >= 1 && hour <= 11 && am_pm === "AM")
+        (hour >= 1 && hour <= 8 && am_pm === "AM")
       ) {
         parentCallback(themes.dark);
       } else {
