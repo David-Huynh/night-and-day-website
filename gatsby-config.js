@@ -28,6 +28,7 @@ module.exports = {
         // Add any options here
       },
     },
+    `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
