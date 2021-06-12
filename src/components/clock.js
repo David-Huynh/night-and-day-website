@@ -46,11 +46,11 @@ const Clock = ({ parentCallback }) => {
         (hour === 12 && am_pm === "AM") ||
         (hour >= 1 && hour <= 6 && am_pm === "AM")
       ) {
-        parentCallback(themes.dark);
         setToLS("theme", themes.dark);
+        parentCallback(themes.dark);
       } else {
-        parentCallback(themes.light);
         setToLS("theme", themes.light);
+        parentCallback(themes.light);
       }
       var minute = timeArray[1];
       return hour + ":" + minute + am_pm;
