@@ -45,21 +45,11 @@ const Clock = ({ parentCallback }) => {
         (hour === 12 && am_pm === "AM") ||
         (hour >= 1 && hour <= 6 && am_pm === "AM")
       ) {
-        if (getFromLS("theme") !== themes.dark) {
-          parentCallback(themes.dark);
-          setToLS("theme", themes.dark);
-        }
-        if (!getFromLS("theme")) {
-          setToLS("theme", themes.dark);
-        }
+        parentCallback(themes.dark);
+        setToLS("theme", themes.dark);
       } else {
-        if (getFromLS("theme") !== themes.light) {
-          parentCallback(themes.light);
-          setToLS("theme", themes.light);
-        }
-        if (!getFromLS("theme")) {
-          setToLS("theme", themes.light);
-        }
+        parentCallback(themes.light);
+        setToLS("theme", themes.light);
       }
       var minute = timeArray[1];
       return hour + ":" + minute + am_pm;
