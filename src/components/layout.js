@@ -6,12 +6,11 @@ import Clock from "./clock";
 import Header from "./header";
 import Footer from "./footer";
 
-import { getFromLS } from "../utils/local-storage";
 import { themes } from "../theme/themes";
 import { GlobalStyles } from "../theme/GlobalStyles";
 
 const Container = styled.main`
-  fontFamily: ${({ theme }) => theme.fontFamily};
+  fontfamily: ${({ theme }) => theme.fontFamily};
   display: flex;
   min-height: 98vh;
   flex-direction: column;
@@ -43,10 +42,10 @@ const Body = styled.div`
 const Layout = ({ titleName, parentThemeCallback, children }) => {
   //TODO: draw background gif thing
   //TODO: maybe fix ctrl shift r, header using light theme
-  const [selectedTheme, setSelectedTheme] = React.useState( themes.light );
+  const [selectedTheme, setSelectedTheme] = React.useState(themes.light);
   const themeCallback = (childSelection) => {
     setSelectedTheme(childSelection);
-    if (parentThemeCallback){
+    if (parentThemeCallback) {
       parentThemeCallback(childSelection);
     }
   };
@@ -79,9 +78,7 @@ const Layout = ({ titleName, parentThemeCallback, children }) => {
         <Header />
         {/* RENDERS THE PAGE TITLE AND CLOCK COMPONENT */}
         <TitleHeader>
-          <StyledTitle>
-            {titleName}
-          </StyledTitle>
+          <StyledTitle>{titleName}</StyledTitle>
           <Clock parentCallback={themeCallback} />
         </TitleHeader>
         <Body>{children}</Body>

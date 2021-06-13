@@ -59,10 +59,10 @@ const Header = () => {
             <NavItems to="/">About</NavItems>
           </li>
           <li>
-            <NavItems to="/resume">Resume</NavItems>
+            <NavItems to="/resume/">Resume</NavItems>
           </li>
           <li>
-            <NavItems to="/contact">Contact Me</NavItems>
+            <NavItems to="/contact/">Contact Me</NavItems>
           </li>
         </NavList>
       </Nav>
