@@ -19,7 +19,6 @@ const Clock = ({ parentCallback }) => {
   /*
     Sets the state and timer for the clock calculated from local time
     since I want the time to always be reflective of Toronto time in order to set the site logic
-    [] is required so React.useEffect doesn't track changes in state
   */
   React.useEffect(() => {
     //Parses the Date.toString() to normal 12hr clock
