@@ -10,14 +10,14 @@ import { themes } from "../theme/themes";
 const TextStyle = styled.h1`
   color: ${({ theme }) => theme.primaryVariant};
 `;
-//Clock Component references the World Time Api to keep track of the time in Toronto and renders it
+//Clock Component calculates time in toronto based of the local time using luxon
 const Clock = ({ parentCallback }) => {
   //Initial Clock State from Local storage o/w default to 00:00AM
   const [time, setTime] = React.useState(
     getFromLS("timeState") ? getFromLS("timeState") : "00:00AM"
   );
   /*
-    Sets the state and timer for the clock and retrieves from World Time API
+    Sets the state and timer for the clock calculated from local time
     since I want the time to always be reflective of Toronto time in order to set the site logic
     [] is required so React.useEffect doesn't track changes in state
   */
