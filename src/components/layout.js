@@ -41,7 +41,6 @@ const Body = styled.div`
 
 const Layout = ({ titleName, parentThemeCallback, children }) => {
   //TODO: draw background gif thing
-  //TODO: maybe fix ctrl shift r, header using light theme
   const [selectedTheme, setSelectedTheme] = React.useState(themes.light);
   const themeCallback = (childSelection) => {
     setSelectedTheme(childSelection);
