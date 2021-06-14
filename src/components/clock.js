@@ -30,7 +30,6 @@ const Clock = ({ parentCallback }) => {
       if (hour === 12) {
         am_pm = "PM";
       }
-      console.log(hour);
       if (hour === "00") {
         hour = 12;
         am_pm = "AM";
