@@ -8,7 +8,7 @@ const IndexPage = () => {
     //RENDERS LAYOUT + Blurb
     <Layout titleName="Seeking">
       <Helmet>
-        <meta name="description" content="Index Page, contains a short bio" />
+        <meta name="description" content="Welcome! I'm David" />
         <meta name="twitter:card" content="summary"></meta>
         <meta name="twitter:site" content="@dhuynh"></meta>
         <meta name="twitter:title" content="Short bio"></meta>
