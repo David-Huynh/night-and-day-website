@@ -30,6 +30,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://dhuynh.ca/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
     },
     
