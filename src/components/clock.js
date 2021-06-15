@@ -3,6 +3,7 @@ import { DateTime } from "luxon";
 import styled from "styled-components";
 import { setToLS, getFromLS } from "../utils/local-storage";
 import { themes } from "../theme/themes";
+import { func } from "prop-types";
 
 //TODO: add GIF movement
 
@@ -76,5 +77,7 @@ const Clock = ({ parentCallback }) => {
 
   return <TextStyle>{time}</TextStyle>;
 };
-
+Clock.propTypes = {
+  parentCallback: func.isRequired,
+};
 export default Clock;

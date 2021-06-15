@@ -31,6 +31,7 @@ function useOutsideAlerter(ref, open, setOpen) {
     };
   }, [ref, open, setOpen]);
 }
+
 /**
  * Component that alerts if you click outside of it
  */

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyledMenu, StyledLink } from "./nav.styled";
-
+import { bool, func } from "prop-types";
 const StyledNav = ({ open, setOpen }) => {
   return (
     <StyledMenu open={open} onClick={() => setOpen(!open)}>
@@ -23,5 +23,9 @@ const StyledNav = ({ open, setOpen }) => {
       </ul>
     </StyledMenu>
   );
+};
+StyledNav.propTypes = {
+  open: bool.isRequired,
+  setOpen: func.isRequired,
 };
 export default StyledNav;

@@ -9,6 +9,7 @@ import Footer from "./footer";
 import { themes } from "../theme/themes";
 import { GlobalStyles } from "../theme/GlobalStyles";
 
+import { string, func, element } from "prop-types";
 const Container = styled.main`
   fontfamily: ${({ theme }) => theme.fontFamily};
   display: flex;
@@ -88,5 +89,10 @@ const Layout = ({ titleName, parentThemeCallback, children }) => {
       </Container>
     </ThemeProvider>
   );
+};
+Layout.propTypes = {
+  titleName: string.isRequired,
+  parentThemeCallback: func.isRequired,
+  children: element.isRequired,
 };
 export default Layout;
