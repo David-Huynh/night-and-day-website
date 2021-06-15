@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl:`https://dhuynh.ca`,
+    siteUrl:`https://dhuynh.ca/`,
     title: "Night and Day Website",
   },
   plugins: 
@@ -29,12 +29,15 @@ module.exports = {
         // Add any options here
       },
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+    },
+    
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://dhuynh.ca',
-        sitemap: 'https://dhuynh.ca/sitemap.xml',
+        sitemap: 'https://dhuynh.ca/sitemap/sitemap-0.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
