@@ -34,7 +34,7 @@ export const StyledMenu = styled.nav`
     white-space: nowrap;
     background-color: transparent;
 
-    transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
+    transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(-100%)")};
     transition: transform 0.3s ease-in-out;
   }
 `;
