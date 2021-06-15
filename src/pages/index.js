@@ -16,8 +16,6 @@ const IndexPage = () => {
           name="twitter:description"
           content="Contains a description of who I am and the website"
         ></meta>
-        
-        
       </Helmet>
       <p>
         Welcome! I'm David, a second year Machine Learning and Statistics
@@ -26,8 +24,9 @@ const IndexPage = () => {
       </p>
       <br />
       <p>
-        You might have noticed a GIF(WIP) in the background, it represents what I'm
-        usually doing at that time of the day.
+        You might have noticed a GIF(WIP) in the background, it represents what
+        I'm usually doing at that time of the day. Looking to commission someone
+        to do this.
       </p>
       <br />
       <p>
