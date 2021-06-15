@@ -25,7 +25,7 @@ const BarStyle = styled.div`
 
 const Burger = ({ open, setOpen }) => {
   return (
-    <BurgerStyle open={open} onClick={() => setOpen(!open)}>
+    <BurgerStyle aria-label="Navigation Menu Button" open={open} onClick={() => setOpen(!open)}>
       <GlobalStyles />
       <BarStyle />
       <BarStyle />
