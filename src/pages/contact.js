@@ -16,7 +16,7 @@ const Mail = styled.p`
   opacity: ${({ theme }) => theme.highEmphText};
 `;
 //Styles the email link
-const Link = styled.a`
+const EmailLink = styled.a`
   color: ${({ theme }) => theme.foreground};
   text-decoration: none;
 `;
@@ -50,9 +50,9 @@ const ContactPage = () => {
       </Cell>
       <Mail>
         <b>
-          <Link href="mailto:huynh.david.work@gmail.com">
+          <EmailLink href="mailto:huynh.david.work@gmail.com">
             huynh.david.work@gmail.com
-          </Link>
+          </EmailLink>
         </b>
       </Mail>
     </Layout>

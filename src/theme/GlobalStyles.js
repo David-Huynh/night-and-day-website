@@ -7,6 +7,11 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.primaryColor};
         font-family: ${({ theme }) => theme.fontFamily};
     }
+    h1{
+        @media (max-width: 450px) {
+            font-size: x-large;
+        }
+    }
     a{
         text-decoration: none;
         color: ${({ theme }) => theme.primaryColor};

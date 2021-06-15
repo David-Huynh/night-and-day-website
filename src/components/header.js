@@ -1,71 +1,33 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
-import MobileNav from "./mobile-nav";
+import Burger from "./burger";
 import { GlobalStyles } from "../theme/GlobalStyles";
-
+import StyledNav from "./nav";
+import OutsideAlerter from "./outsideAlerter";
+//"StyledNav" adapted from https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/ for mobile and for horizontal nav
 //Styles Div for Header Container
 const HeaderContainer = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-wrap: nowrap;
 `;
 //Styles h2 for Page Title
 const Title = styled.h2`
   color: ${({ theme }) => theme.primaryColor};
   font-family: "Monoton", cursive;
-`;
-//Styles the Nav Container
-const Nav = styled.nav`
-  align-self: center;
-  display: flex;
-  align-items: stretch;
-  @media (max-width: 1440px) {
-    display: none;
-  }
-`;
-//Styles the Navigation List
-const NavList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  list-style: none;
-`;
-
-//Styles the List Items using the theme
-const NavItems = styled(Link)`
-  color: ${({ theme }) => theme.foreground};
-  opacity: ${({ theme }) => theme.mediumEmphText};
-  text-decoration: none;
-  padding: 5px;
-  :hover {
-    background-color: ${({ theme }) => theme.primaryVariant};
+  @media (max-width: 450px) {
+    filter: ${({ open }) => (open ? "blur(5px)" : "blur(0px)")};
   }
 `;
 
 const Header = () => {
+  const [open, setOpen] = React.useState(false);
   return (
     <HeaderContainer>
       <GlobalStyles />
-      <Title>DAVID</Title>
-      <MobileNav />
-      <Nav>
-        <NavList>
-          <li>
-            <NavItems to="/">About</NavItems>
-          </li>
-          <li>
-            <NavItems to="/resume/">Resume</NavItems>
-          </li>
-          <li>
-            <NavItems to="/contact/">Contact Me</NavItems>
-          </li>
-        </NavList>
-      </Nav>
+      <OutsideAlerter open={open} setOpen={setOpen}>
+        <Title open={open}>DAVID</Title>
+        <Burger open={open} setOpen={setOpen} />
+        <StyledNav open={open} setOpen={setOpen} />
+      </OutsideAlerter>
     </HeaderContainer>
   );
 };

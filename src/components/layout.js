@@ -74,13 +74,16 @@ const Layout = ({ titleName, parentThemeCallback, children }) => {
             content="Layout Template, contains header and footer"
           />
         </Helmet>
+
         <Header />
         {/* RENDERS THE PAGE TITLE AND CLOCK COMPONENT */}
         <TitleHeader>
           <StyledTitle>{titleName}</StyledTitle>
           <Clock parentCallback={themeCallback} />
         </TitleHeader>
+
         <Body>{children}</Body>
+
         <Footer />
       </Container>
     </ThemeProvider>
