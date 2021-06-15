@@ -11,6 +11,13 @@ const ResumePage = () => {
           name="description"
           content="Resume Page, contains my experience and project descriptions"
         />
+        <meta name="twitter:card" content="summary"></meta>
+        <meta
+          name="twitter:description"
+          content="David Huynh - Resume Page"
+        ></meta>
+        <meta name="twitter:title" content="My projects/resume"></meta>
+        <meta name="twitter:site" content="@dhuynh"></meta>
       </Helmet>
       <GlobalStyles />
       <p>Job</p>

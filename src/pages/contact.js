@@ -33,6 +33,13 @@ const ContactPage = () => {
     <Layout titleName="Contact Info" parentThemeCallback={themeCallback}>
       <Helmet>
         <meta name="description" content="Contact Info page" />
+        <meta name="twitter:card" content="summary"></meta>
+        <meta
+          name="twitter:description"
+          content="David Huynh - Contact Info page"
+        ></meta>
+        <meta name="twitter:title" content="Contact Info"></meta>
+        <meta name="twitter:site" content="@dhuynh"></meta>
       </Helmet>
       {/* Renders certain text depending on the time of the day */}
       {selectedTheme === themes.light && (

@@ -9,6 +9,13 @@ const IndexPage = () => {
     <Layout titleName="Seeking">
       <Helmet>
         <meta name="description" content="Index Page, contains a short bio" />
+        <meta name="twitter:card" content="summary"></meta>
+        <meta
+          name="twitter:description"
+          content="David Huynh - Home page"
+        ></meta>
+        <meta name="twitter:title" content="A short bio"></meta>
+        <meta name="twitter:site" content="@dhuynh"></meta>
       </Helmet>
       <p>
         Welcome! I'm David, a second year Machine Learning and Statistics
