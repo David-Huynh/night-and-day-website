@@ -2,52 +2,61 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 //Styles the Nav Container
-export const StyledMenu = styled.nav`
+export const MenuStyle = styled.nav`
+  /* Parent Flex Styling */
   align-self: center;
-
+  /* Flex Styling */
   display: flex;
   flex-direction: row;
-  align-items: stretch;
   justify-content: space-between;
-
+  align-items: stretch;
+  flex-wrap: nowrap;
   ul {
+    /* Parent Flex Styling */
+    flex: 1;
+
     padding: 0;
+    list-style: none;
+
+    /* Flex Styling */
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: stretch;
-    list-style: none;
-    flex: 1;
+    /* Allows nav bar to scroll if too big */
+    flex-wrap: nowrap;
   }
   /* Mobile View */
   @media (max-width: 450px) {
-    flex-wrap: nowrap;
+    /* Size */
+    width: 100vw;
+    /* Positioning of the mobile menu */
     z-index: 1;
     position: absolute;
-    width: 100vw;
     left: 0;
+    transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(-100%)")};
+    transition: transform 0.3s ease-in-out;
+
     /* Simulates h1 text margin */
     margin-top: 0.67em;
     margin-bottom: 0.67em;
-    /* Adds scrolling just in case screen is too small */
+    /* Allows scrolling just in case screen is too small */
     overflow: auto;
     white-space: nowrap;
     background-color: transparent;
-
-    transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(-100%)")};
-    transition: transform 0.3s ease-in-out;
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const LinkStyle = styled(Link)`
+  padding: 5px;
+  text-decoration: none;
+  /* Color Theme for Links */
   color: ${({ theme }) => theme.foreground};
   opacity: ${({ theme }) => theme.mediumEmphText};
-  text-decoration: none;
-  padding: 5px;
   :hover {
     background-color: ${({ theme }) => theme.primaryVariant};
   }
   @media (max-width: 450px) {
+    /* Mobile Font Settings */
     font-weight: bold;
     font-size: large;
   }

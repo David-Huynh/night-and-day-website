@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    siteUrl:`https://dhuynh.ca/`,
+    siteUrl: `https://dhuynh.ca/`,
     title: "Night and Day Website",
   },
-  plugins: 
-    ["gatsby-plugin-gatsby-cloud",
+  plugins: [
+    "gatsby-plugin-gatsby-cloud",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -23,12 +23,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Add any options here
-      },
-    },
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
@@ -38,16 +33,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
     },
-    
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://dhuynh.ca',
-        sitemap: 'https://dhuynh.ca/sitemap/sitemap-0.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
+        host: "https://dhuynh.ca",
+        sitemap: "https://dhuynh.ca/sitemap/sitemap-0.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
     },
-
     `gatsby-plugin-offline`,
   ],
 };

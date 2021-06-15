@@ -10,12 +10,14 @@ const IndexPage = () => {
       <Helmet>
         <meta name="description" content="Index Page, contains a short bio" />
         <meta name="twitter:card" content="summary"></meta>
+        <meta name="twitter:site" content="@dhuynh"></meta>
+        <meta name="twitter:title" content="Short bio"></meta>
         <meta
           name="twitter:description"
-          content="David Huynh - Home page"
+          content="Contains a description of who I am and the website"
         ></meta>
-        <meta name="twitter:title" content="A short bio"></meta>
-        <meta name="twitter:site" content="@dhuynh"></meta>
+        
+        
       </Helmet>
       <p>
         Welcome! I'm David, a second year Machine Learning and Statistics

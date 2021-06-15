@@ -14,11 +14,10 @@ const Cell = styled.p`
 const Mail = styled.p`
   margin: 0;
   opacity: ${({ theme }) => theme.highEmphText};
-`;
-//Styles the email link
-const EmailLink = styled.a`
-  color: ${({ theme }) => theme.foreground};
-  text-decoration: none;
+  a {
+    color: ${({ theme }) => theme.foreground};
+    text-decoration: none;
+  }
 `;
 
 const ContactPage = () => {
@@ -34,12 +33,9 @@ const ContactPage = () => {
       <Helmet>
         <meta name="description" content="Contact Info page" />
         <meta name="twitter:card" content="summary"></meta>
-        <meta
-          name="twitter:description"
-          content="David Huynh - Contact Info page"
-        ></meta>
-        <meta name="twitter:title" content="Contact Info"></meta>
         <meta name="twitter:site" content="@dhuynh"></meta>
+        <meta name="twitter:title" content="Contact Info"></meta>
+        <meta name="twitter:description" content="Contains contact info"></meta>
       </Helmet>
       {/* Renders certain text depending on the time of the day */}
       {selectedTheme === themes.light && (
@@ -57,9 +53,9 @@ const ContactPage = () => {
       </Cell>
       <Mail>
         <b>
-          <EmailLink href="mailto:huynh.david.work@gmail.com">
+          <a href="mailto:huynh.david.work@gmail.com">
             huynh.david.work@gmail.com
-          </EmailLink>
+          </a>
         </b>
       </Mail>
     </Layout>

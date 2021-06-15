@@ -1,27 +1,27 @@
 import * as React from "react";
-import { StyledMenu, StyledLink } from "./nav.styled";
+import { MenuStyle, LinkStyle } from "./nav.styled";
 import { bool, func } from "prop-types";
 const StyledNav = ({ open, setOpen }) => {
   return (
-    <StyledMenu open={open} onClick={() => setOpen(!open)}>
+    <MenuStyle open={open} onClick={() => setOpen(!open)}>
       <ul>
         <li>
-          <StyledLink to="/" aria-label="about">
+          <LinkStyle to="/" aria-label="about">
             About
-          </StyledLink>
+          </LinkStyle>
         </li>
         <li>
-          <StyledLink to="/resume/" aria-label="resume">
+          <LinkStyle to="/resume/" aria-label="resume">
             Resume
-          </StyledLink>
+          </LinkStyle>
         </li>
         <li>
-          <StyledLink to="/contact/" aria-label="contact info">
+          <LinkStyle to="/contact/" aria-label="contact info">
             Contact Me
-          </StyledLink>
+          </LinkStyle>
         </li>
       </ul>
-    </StyledMenu>
+    </MenuStyle>
   );
 };
 StyledNav.propTypes = {

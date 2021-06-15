@@ -1,47 +1,21 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 
-import Clock from "./clock";
 import Header from "./header";
+import TitleHeader from "./titleHeader";
 import Footer from "./footer";
+
+import { Container, Body } from "./layout.styled";
 
 import { themes } from "../theme/themes";
 import { GlobalStyles } from "../theme/GlobalStyles";
 
 import { string, func, element } from "prop-types";
-const Container = styled.main`
-  fontfamily: ${({ theme }) => theme.fontFamily};
-  display: flex;
-  min-height: 98vh;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 30%;
-  margin-right: 30%;
-  @media (max-width: 1440px) {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-`;
-const StyledTitle = styled.h1`
-  color: ${({ theme }) => theme.foreground};
-  opacity: ${({ theme }) => theme.highEmphText};
-`;
-const TitleHeader = styled.div`
-  width: 100%;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-wrap: nowrap;
-`;
-const Body = styled.div`
-  flex: 1;
-`;
 
 const Layout = ({ titleName, parentThemeCallback, children }) => {
-  //TODO: draw background gif thing
+  //TODO: draw background gif/asset that is interactable to see what i'm listening to on spotify 
+  //and maybe what i'm doing on the computer but also tracks me around my room every 5 mins
   const [selectedTheme, setSelectedTheme] = React.useState(themes.light);
   const themeCallback = (childSelection) => {
     setSelectedTheme(childSelection);
@@ -54,10 +28,11 @@ const Layout = ({ titleName, parentThemeCallback, children }) => {
       {/*Loads global styling*/}
       <GlobalStyles />
       <Container>
+        {/*Adds Meta Data and Header Tags*/}
         <Helmet>
           <html lang="en" />
           <meta charSet="utf-8" />
-          <title>David Huynh - {titleName}</title>
+          <title>{titleName} - David Huynh</title>
           <style>
             {`
             @font-face {
@@ -75,16 +50,13 @@ const Layout = ({ titleName, parentThemeCallback, children }) => {
             content="Layout Template, contains header and footer"
           />
         </Helmet>
-
+        {/* Adds Navigation and Logo Header */}
         <Header />
-        {/* RENDERS THE PAGE TITLE AND CLOCK COMPONENT */}
-        <TitleHeader>
-          <StyledTitle>{titleName}</StyledTitle>
-          <Clock parentCallback={themeCallback} />
-        </TitleHeader>
-
+        {/* Adds the Page Title and Clock Header */}
+        <TitleHeader titleName={titleName} themeCallback={themeCallback} />
+        {/* Body */}
         <Body>{children}</Body>
-
+        {/* Footer */}
         <Footer />
       </Container>
     </ThemeProvider>
