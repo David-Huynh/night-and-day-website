@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://dhuynh.ca",
+        host: "https://dhuynh.ca/",
         sitemap: "https://dhuynh.ca/sitemap/sitemap-0.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
