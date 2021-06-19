@@ -4,13 +4,15 @@ import { GlobalStyles } from "../theme/GlobalStyles";
 import { FaLinkedinIn } from "react-icons/fa";
 
 const FooterStyle = styled.div`
+  color: ${({ theme }) => theme.primaryColor};
+  opacity: ${({ theme }) => theme.highEmphText};
   align-self: center;
 `;
 
 const Footer = () => {
   return (
     <FooterStyle>
-      <GlobalStyles/>
+      <GlobalStyles />
       <a
         href="https://www.linkedin.com/in/david-huynh-/"
         rel="noopener noreferrer"

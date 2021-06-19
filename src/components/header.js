@@ -12,6 +12,7 @@ const HeaderContainer = styled.div`
 //Styles h2 for Page Title
 const Title = styled.h2`
   color: ${({ theme }) => theme.primaryColor};
+  opacity:${({ theme }) => theme.highEmphText};
   font-family: "Monoton", cursive;
   @media (max-width: 450px) {
     filter: ${({ open }) => (open ? "blur(5px)" : "blur(0px)")};
