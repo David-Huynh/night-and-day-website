@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TitleHeaderStyle = styled.div`
   width: 100%;
-
+  opacity:${({ theme }) => theme.backgroundOpacity};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11,5 +11,4 @@ export const TitleHeaderStyle = styled.div`
 `;
 export const TitleStyle = styled.h1`
   color: ${({ theme }) => theme.foreground};
-  opacity: ${({ theme }) => theme.highEmphText};
 `;

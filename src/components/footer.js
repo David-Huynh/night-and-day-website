@@ -5,7 +5,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 const FooterStyle = styled.div`
   color: ${({ theme }) => theme.primaryColor};
-  opacity: ${({ theme }) => theme.highEmphText};
+  opacity:${({ theme }) => theme.highEmphText};
   align-self: center;
 `;
 

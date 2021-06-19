@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 //Styles the Nav Container
 export const MenuStyle = styled.nav`
+  opacity:${({ theme }) => theme.backgroundOpacity};
   /* Parent Flex Styling */
   align-self: center;
   /* Flex Styling */

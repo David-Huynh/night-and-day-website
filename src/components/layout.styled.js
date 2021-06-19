@@ -17,5 +17,6 @@ export const Container = styled.main`
 `;
 
 export const Body = styled.div`
+  opacity:${({ theme }) => theme.backgroundOpacity};
   flex: 1;
 `;
