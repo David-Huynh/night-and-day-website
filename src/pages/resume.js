@@ -3,8 +3,14 @@ import Layout from "../components/layout";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import { GlobalStyles } from "../theme/GlobalStyles";
+import { FaLink } from "react-icons/fa";
 
 const ResumeStyle = styled.div`
+  a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   h2 {
     color: ${({ theme }) => theme.primaryVariant};
     margin-top: 0;
@@ -41,6 +47,7 @@ const ResumePage = () => {
           target="_blank"
         >
           <h2>Personal Website</h2>
+          <FaLink></FaLink>
         </a>
         <ul>
           <li>
@@ -63,6 +70,7 @@ const ResumePage = () => {
           target="_blank"
         >
           <h2>Course Website</h2>
+          <FaLink></FaLink>
         </a>
         <ul>
           <li>
@@ -89,6 +97,7 @@ const ResumePage = () => {
           target="_blank"
         >
           <h2>Chefs Swipe</h2>
+          <FaLink></FaLink>
         </a>
         <ul>
           <li>
@@ -114,6 +123,7 @@ const ResumePage = () => {
           target="_blank"
         >
           <h2>Simulated Java Shell</h2>
+          <FaLink></FaLink>
         </a>
         <ul>
           <li>
