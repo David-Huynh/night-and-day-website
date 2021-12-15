@@ -42,6 +42,32 @@ const ResumePage = () => {
       <GlobalStyles />
       <ResumeStyle>
         <a
+          href="https://docs.google.com/document/d/1v_za99w6o9s4XS2CSu8SJrn6ThQJg2smcrfT_m9N2MU/edit#"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <h2>FarmLink Marketing Solutions (Grainfox)</h2>
+          <FaLink></FaLink>
+        </a>
+        <ul>
+          <li>
+            Integrated Salesforce using Webhooks resulting in on average <b>66x </b> 
+            less server load than a polling solution
+          </li>
+          <li>
+            Utilized Microsoft Graph API's delta links to create a nearly <b>100% </b> 
+            efficient polling solution for Microsoft SharePoint excel files
+          </li>
+          <li>
+            Proficiency in Python applied when creating an Excel Sheet parser to insert
+            into a MySQL database
+          </li>
+          <li>
+            Applied proficient networking and server administration skills to sucessfully
+            monitor and alert Grainfox servers using Prometheus and Grafana 
+          </li>
+        </ul>
+        <a
           href="https://github.com/David-Huynh/personal-nightday-website"
           rel="noopener noreferrer"
           target="_blank"
