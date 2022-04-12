@@ -1,5 +1,5 @@
-export default function auth(req, res) {
-    function callback() {
+export default async function auth(req, res) {
+    async function callback() {
         const code = req.query.code || null;
         const state = req.query.state || null;
         const params = new URLSearchParams();
@@ -40,7 +40,7 @@ export default function auth(req, res) {
     // Verify login and password are set and correct
     if (login && password && login === auth.login && password === auth.password) {
         // Access granted...
-        return callback();
+        return await callback();
     }
 
     // Access denied...
