@@ -29,7 +29,7 @@ export default async function auth(req, res) {
             }
         }
     }
-    
+    return await callback();
     // From https://stackoverflow.com/questions/23616371/basic-http-authentication-with-node-and-express-4
     const auth = {login: 'broken', password: `${process.env.ADMINPASS}`} // change this
     
