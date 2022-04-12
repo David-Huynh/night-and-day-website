@@ -4,7 +4,7 @@ export default async function auth(req, res) {
     async function callback() {
         const client_id = `${process.env.CLIENT_ID}`;
         const client_secret = `${process.env.CLIENT_SECRET}`;
-        const redirect_uri = 'http://localhost:8000/api/callback';
+        const redirect_uri = 'https://dhuynh.ca/api/callback';
 
         const code = req.query.code || null;
         const state = req.query.state || null;
