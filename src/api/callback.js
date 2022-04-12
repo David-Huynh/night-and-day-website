@@ -11,7 +11,6 @@ export default async function auth(req, res) {
         
         const params = new URLSearchParams();
         if (state === null) {
-            
             params.append('error', 'state_mismatch');
             res.redirect('/#' + params.toString());
         } else {
@@ -28,8 +27,6 @@ export default async function auth(req, res) {
                     },
                 });
                 const data = await result.json();
-                process.env['ACCESS_TOKEN'] = data.access_token;
-                process.env['REFRESH_TOKEN'] = data.refresh_token;
                 res.json(data)
             } catch (error) {
                 res.status(500).send(error)

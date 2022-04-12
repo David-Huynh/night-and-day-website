@@ -10,7 +10,7 @@ export default function auth(req, res) {
         params.append('client_id', client_id);
         params.append('redirect_uri', redirect_uri);
         params.append('response_type', 'code');
-        params.append('scope', 'user-read-private');
+        params.append('scope', 'user-read-recently-played');
         params.append('state', state);
 
         res.redirect('https://accounts.spotify.com/authorize?' + params.toString());
