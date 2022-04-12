@@ -1,29 +1,36 @@
+import fetch from "node-fetch"
+
 export default async function auth(req, res) {
     async function callback() {
+        const client_id = `${process.env.CLIENT_ID}`;
+        const client_secret = `${process.env.CLIENT_SECRET}`;
+        const redirect_uri = 'http://localhost:8000/api/callback';
+
         const code = req.query.code || null;
         const state = req.query.state || null;
+        
         const params = new URLSearchParams();
         if (state === null) {
+            
             params.append('error', 'state_mismatch');
             res.redirect('/#' + params.toString());
         } else {
-            const authOptions = {
-                form: {
-                    code: code,
-                    redirect_uri: redirect_uri,
-                    grant_type: 'authorization_code'
-                },
-                headers: {
-                    'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
-                },
-            };
+            // Send post request to Spotify API https://accounts.spotify.com/api/token to get access token
             try {
-                const result = await fetch('https://accounts.spotify.com/api/token', 
-                authOptions).then(res => {
-                    return res.json()
-                })
-                process.env['ACCESS_TOKEN'] = result.access_token;
-                res.json(result)
+                params.append('grant_type', 'authorization_code');
+                params.append('code', code);
+                params.append('redirect_uri', redirect_uri);
+                const result = await fetch('https://accounts.spotify.com/api/token', {
+                    method: "POST",
+                    body: params,
+                    headers: {
+                        'Authorization': 'Basic ' + Buffer.from(client_id + ':' + client_secret).toString('base64')
+                    },
+                });
+                const data = await result.json();
+                process.env['ACCESS_TOKEN'] = data.access_token;
+                process.env['REFRESH_TOKEN'] = data.refresh_token;
+                res.json(data)
             } catch (error) {
                 res.status(500).send(error)
             }

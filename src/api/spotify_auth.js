@@ -2,7 +2,7 @@
 export default function auth(req, res) {
     function retrieve_code(){
         const client_id = `${process.env.CLIENT_ID}`;
-        const redirect_uri = 'https://dhuynh.ca/api/callback';
+        const redirect_uri = 'http://localhost:8000/api/callback';
 
         const params = new URLSearchParams();
         const state = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 7);
