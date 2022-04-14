@@ -88,7 +88,7 @@ const SpotifyPlayer = () => {
                     <span className="material-icons" style={{fontSize:"2em", position:"absolute", color:'white', borderRadius: '50%', backgroundColor: 'rgba(0,0,0,.5)', top:"50%", left:"50%",  transform: 'translate(-50%, -50%)'}}>
                     {song_details.name === '' ? 'play_arrow' : 'pause'}
                     </span>
-                    <img src={song_details.image_url === '' ? DefaultAlbumPic : song_details.image_url} alt='Song Album'/>
+                    <img src={song_details.image_url === '' ? DefaultAlbumPic : song_details.image_url} alt='Song Album' style={{width: '64px', height: '64px'}}/>
                 </div>
             </a>
             <ColContainer>
