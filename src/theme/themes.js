@@ -2,6 +2,7 @@ export const themes = {
     light: {
       foreground: "#000000",
       background: "#FFFFFF",
+      alternateBackground: "#BEBEBE",
       backgroundOpacity: 1,
       primaryColor: "#6520a3",
       primaryVariant: "#9850d5",
@@ -12,6 +13,7 @@ export const themes = {
     dark: {
       foreground: "#FFFFFF",
       background: "#121212",
+      alternateBackground: "#282828",
       backgroundOpacity: 0.87,
       primaryColor: "#9850d5",
       primaryVariant: "#ba59ff",

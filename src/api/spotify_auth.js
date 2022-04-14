@@ -9,7 +9,7 @@ export default function spotify_auth(req, res) {
     params.append('client_id', client_id);
     params.append('redirect_uri', redirect_uri);
     params.append('response_type', 'code');
-    params.append('scope', 'user-read-recently-played user-read-email');
+    params.append('scope', 'user-read-currently-playing user-read-email');
     params.append('state', state);
 
     res.redirect('https://accounts.spotify.com/authorize?' + params.toString());

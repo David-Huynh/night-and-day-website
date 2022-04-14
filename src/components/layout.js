@@ -15,7 +15,6 @@ import { string, func, element } from "prop-types";
 
 const Layout = ({ titleName, parentThemeCallback, children }) => {
   //TODO: draw background gif/asset that is interactable to see what i'm listening to on spotify 
-  //and maybe what i'm doing on the computer but also tracks me around my room every 5 mins
   const [selectedTheme, setSelectedTheme] = React.useState(themes.light);
   const themeCallback = (childSelection) => {
     setSelectedTheme(childSelection);
