@@ -1,4 +1,4 @@
-import fetch from "node-fetch"
+import fetch from 'node-fetch';
 
 export default async function spotify_callback_auth(req, res) {
     const client_id = `${process.env.CLIENT_ID}`;

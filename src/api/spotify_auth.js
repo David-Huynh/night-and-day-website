@@ -1,6 +1,6 @@
 
 export default function spotify_auth(req, res) {
-    const client_id = `${process.env.CLIENT_ID}`;
+    const client_id = process.env.CLIENT_ID;
     const redirect_uri = 'https://dhuynh.ca/api/callback';
 
     const params = new URLSearchParams();
