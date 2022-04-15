@@ -8,10 +8,11 @@ async function getHomeState(db) {
         if (snapshot.exists()) {
             return snapshot.val();
         } else {
-            console.log("No data available");
+            return true;
         }
     }).catch((error) => {
         console.error(error);
+        return true;
     });
 }
 export default async function retrieve_location(req, res) {
@@ -26,7 +27,10 @@ export default async function retrieve_location(req, res) {
     };
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
-    const response = {home: await getHomeState(db)}
-    goOffline(db);
-    return res.json(response);
+    return await getHomeState(db).then((home_state) => {
+        goOffline(db);
+        return res.json({home: home_state});
+    }).catch((error) => {
+        console.error(error);
+    });
 }

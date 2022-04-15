@@ -71,9 +71,7 @@ const SpotifyPlayer = () => {
     }
     async function retrieveSetSongs(){
         try {
-            const result = await fetch('https://dhuynh.ca/api/retrieve_played_songs', {
-                method: 'GET',
-            });
+            const result = await fetch('https://dhuynh.ca/api/retrieve_played_songs', {method: 'GET'});
             const song_data = await result.json();
             
             setStates(song_data);
