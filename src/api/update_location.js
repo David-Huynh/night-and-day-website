@@ -30,7 +30,7 @@ export default async function update_location(req, res) {
     }
 
     // Basic Auth from https://stackoverflow.com/questions/23616371/basic-http-authentication-with-node-and-express-4
-    const auth = {login: 'broken', password: process.env.ADMINPASS};
+    const auth = {login: 'broken', password: process.env.ADMIN_PASS};
 
     // parse login and password from headers
     const b64auth = (req.headers.authorization || '').split(' ')[1] || '';
@@ -44,6 +44,7 @@ export default async function update_location(req, res) {
             return res.json(result);
         }).catch((error) => {
             console.error(error);
+            return res.json(error);
         });
     }
 
