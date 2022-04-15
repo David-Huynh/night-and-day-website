@@ -8,11 +8,11 @@ async function getHomeState(db) {
         if (snapshot.exists()) {
             return snapshot.val();
         } else {
-            return false;
+            return 'NO SUCH STATE';
         }
     }).catch((error) => {
         console.error(error);
-        return false;
+        return error;
     });
 }
 export default async function retrieve_location(req, res) {
@@ -32,9 +32,10 @@ export default async function retrieve_location(req, res) {
     const db = await getDatabaseRef();
     return await getHomeState(db).then((home_state) => {
         goOffline(db);
-        return res.json({home: home_state});
+        return res.status(200).json({home: home_state});
     }).catch((error) => {
         goOffline(db);
         console.error(error);
+        return res.status(500).json({error: error});
     });
 }
