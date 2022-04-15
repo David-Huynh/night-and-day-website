@@ -45,7 +45,7 @@ export default async function update_location(req, res) {
             return res.status(200).send(result);
         }).catch((error) => {
             console.error(error);
-            return res.json(error);
+            return res.status(500).send(result);
         });
     }
 
