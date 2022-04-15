@@ -41,7 +41,8 @@ export default async function update_location(req, res) {
         const db = await init_db();
         return await setHomeState(db, req.body.state).then((result) => {
             goOffline(db);
-            return res.json(result);
+            res.set('WWW-Authenticate', 'Basic realm="dhuynh"');
+            return res.status(200).send(result);
         }).catch((error) => {
             console.error(error);
             return res.json(error);
