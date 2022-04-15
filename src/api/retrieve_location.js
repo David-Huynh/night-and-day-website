@@ -8,11 +8,11 @@ async function getHomeState(db) {
         if (snapshot.exists()) {
             return snapshot.val();
         } else {
-            return true;
+            return false;
         }
     }).catch((error) => {
         console.error(error);
-        return true;
+        return false;
     });
 }
 export default async function retrieve_location(req, res) {
