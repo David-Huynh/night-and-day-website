@@ -37,6 +37,14 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
     },
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Monoton']
+        }
+      }
+    },
+    {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://dhuynh.ca/",

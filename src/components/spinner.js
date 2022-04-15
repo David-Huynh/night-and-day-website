@@ -1,8 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
 import { themes } from "../theme/themes";
-import WebFont from 'webfontloader';
-
 
 const Title = styled.h2`
     color: ${themes.dark.primaryColor};
@@ -26,13 +24,6 @@ const Box = styled.div`
 
 // Spotify player component updates to most recent song played
 const LogoSpinner = () => {
-    React.useEffect(() => {
-        WebFont.load({
-          google: {
-            families: ['Monoton']
-          }
-        });
-    }, []);
     return(
         <Box>
             <Title>D</Title>
