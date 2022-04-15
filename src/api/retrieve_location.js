@@ -34,6 +34,7 @@ export default async function retrieve_location(req, res) {
         goOffline(db);
         return res.json({home: home_state});
     }).catch((error) => {
+        goOffline(db);
         console.error(error);
     });
 }

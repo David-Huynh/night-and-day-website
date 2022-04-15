@@ -48,9 +48,11 @@ export default async function update_location(req, res) {
                 return res.status(200).json(result);
             }).catch((error) => {
                 console.error(error);
+                goOffline(db);
                 return res.status(500).send(error);
             });
         } else {
+            goOffline(db);
             return res.status(405).send('Method not allowed');
         }
     }
