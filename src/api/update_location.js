@@ -39,10 +39,12 @@ export default async function update_location(req, res) {
     // Verify login and password are set and correct
     if (login && password && login === auth.login && password === auth.password) {
         const db = await init_db();
-        const response = await setHomeState(db, req.body.state);
-        goOffline(db);
-        
-        return res.json(response);
+        return await setHomeState(db, req.body.state).then((result) => {
+            goOffline(db);
+            return res.json(result);
+        }).catch((error) => {
+            console.error(error);
+        });
     }
 
     // Access denied...
