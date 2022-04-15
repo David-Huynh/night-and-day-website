@@ -26,7 +26,7 @@ const IndexPage = () => {
         </p>
         <br />
         <p>
-          You might have noticed a GIF(WIP) in the background, it represents what
+          You might have noticed a GIF(work in progress) in the background, it represents what
           I'm usually doing at that time of the day. Looking to commission someone
           to do this.
         </p>
@@ -35,6 +35,12 @@ const IndexPage = () => {
           This site transitions into "night" mode after 11:00pm Toronto time and
           back to "day" mode after 8:00am stick around to see how it looks.
         </p>
+        <br />
+        <p>
+          The GIF is still a work in progress so everything that I would like to
+          put in the gif is below.
+        </p>
+        <br />
         <SpotifyPlayer />
       </Layout>
     </React.Suspense>
