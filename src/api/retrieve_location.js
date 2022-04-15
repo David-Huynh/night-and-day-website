@@ -16,7 +16,7 @@ async function getHomeState(db) {
     });
 }
 export default async function retrieve_location(req, res) {
-    async function getDatabase(){
+    async function getDatabaseRef(){
         const firebaseConfig = {
             apiKey: process.env.FIREBASE_API_KEY,
             authDomain: `${process.env.PROJECT_ID}.firebaseapp.com`,
@@ -27,10 +27,9 @@ export default async function retrieve_location(req, res) {
             appId: process.env.FIREBASE_APP_ID
         };
         const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-        return db;
+        return getDatabase(app);
     }
-    const db = await getDatabase();
+    const db = await getDatabaseRef();
     return await getHomeState(db).then((home_state) => {
         goOffline(db);
         return res.json({home: home_state});
