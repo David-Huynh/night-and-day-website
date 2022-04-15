@@ -27,14 +27,13 @@ export default async function retrieve_location(req, res) {
             appId: process.env.FIREBASE_APP_ID
         };
         const app = initializeApp(firebaseConfig);
-        return getDatabase(app);
+        const db = getDatabase(app);
+        return db;
     }
     const db = await getDatabaseRef();
     return await getHomeState(db).then((home_state) => {
-        goOffline(db);
         return res.status(200).json({home: home_state});
     }).catch((error) => {
-        goOffline(db);
         console.error(error);
         return res.status(500).json({error: error});
     });

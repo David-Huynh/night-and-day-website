@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.7",
-    "firebase": "^9.6.10",
+    "firebase": "^9.6.11",
     "gatsby": "^4.12.1",
     "gatsby-plugin-canonical-urls": "^4.12.1",
     "gatsby-plugin-gatsby-cloud": "^4.12.1",
