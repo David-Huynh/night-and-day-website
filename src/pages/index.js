@@ -32,7 +32,7 @@ const IndexPage = () => {
         </p>
         <br />
         <p>
-          This site transitions into "night" mode after 11:00pm Toronto time and
+          This site transitions into "night" mode after 10:00pm Toronto time and
           back to "day" mode after 8:00am stick around to see how it looks.
         </p>
         <br />
