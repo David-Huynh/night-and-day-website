@@ -18,7 +18,6 @@ const IndexPage = () => {
             name="twitter:description"
             content="Contains a description of who I am and the website"
           ></meta>
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet" type='text/css'/>
         </Helmet>
         <p>
           Welcome! I'm David, a Machine Learning and Statistics

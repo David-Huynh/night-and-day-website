@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { RowContainer, ColContainer, ProgressBar, ThemeParagraph } from "../components/spotifyPlayer.styled";
 import DefaultAlbumPic from "../images/default_album.png";
+import { BiPause } from "react-icons/bi";
+import { BiPlay } from "react-icons/bi";
 
 import fetch from 'node-fetch';
 import { useInterval } from "../hooks/useIntervals";
@@ -83,11 +85,9 @@ const SpotifyPlayer = () => {
     useInterval(retrieveSetSongs, delay);
     return(
         <RowContainer>
-            <a href={song_details.link} target='_blank' rel='noreferrer' style={{display: "block"}}>
+            <a href={song_details.link} target='_blank' rel='noreferrer'>
                 <div style={{position: "relative"}}>
-                    <span className="material-icons" style={{fontSize:"2em", position:"absolute", color:'white', borderRadius: '50%', backgroundColor: 'rgba(0,0,0,.5)', top:"50%", left:"50%",  transform: 'translate(-50%, -50%)'}}>
-                    {song_details.name === '' ? 'play_arrow' : 'pause'}
-                    </span>
+                    {song_details.name === '' ? <BiPlay style={{fontSize:"2em", position:"absolute", color:'white', borderRadius: '50%', backgroundColor: 'rgba(0,0,0,.5)', top:"50%", left:"50%",  transform: 'translate(-50%, -50%)'}}/> : <BiPause style={{fontSize:"2em", position:"absolute", color:'white', borderRadius: '50%', backgroundColor: 'rgba(0,0,0,.5)', top:"50%", left:"50%",  transform: 'translate(-50%, -50%)'}}/>}
                     <img src={song_details.image_url === '' ? DefaultAlbumPic : song_details.image_url} alt='Song Album' style={{width: '64px', height: '64px'}}/>
                 </div>
             </a>
