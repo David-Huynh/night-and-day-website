@@ -9,7 +9,7 @@ const IndexPage = () => {
     //RENDERS LAYOUT + Blurb
     <React.Suspense fallback={<LogoSpinner />}>
       <Layout titleName="Seeking">
-        <Helmet>
+        <Helmet defer={false}>
           <meta name="description" content="Welcome! I'm David" />
           <meta name="twitter:card" content="summary"></meta>
           <meta name="twitter:site" content="@dhuynh"></meta>

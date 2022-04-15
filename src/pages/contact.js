@@ -33,7 +33,7 @@ const ContactPage = () => {
     //RENDERS CONTACT INFO
     <React.Suspense fallback={<LogoSpinner />}>
       <Layout titleName="Contact Info" parentThemeCallback={themeCallback}>
-        <Helmet>
+        <Helmet defer={false}>
           <meta name="description" content="Contact Info page" />
           <meta name="twitter:card" content="summary"></meta>
           <meta name="twitter:site" content="@dhuynh"></meta>

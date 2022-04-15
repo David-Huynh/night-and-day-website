@@ -28,7 +28,7 @@ const ResumePage = () => {
   return (
     <React.Suspense fallback={<LogoSpinner />}>
       <Layout titleName="Resume">
-        <Helmet>
+        <Helmet defer={false}>
           <meta
             name="description"
             content="Resume Page, contains my experience and project descriptions"
