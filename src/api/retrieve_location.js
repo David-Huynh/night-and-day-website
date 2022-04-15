@@ -16,17 +16,21 @@ async function getHomeState(db) {
     });
 }
 export default async function retrieve_location(req, res) {
-    const firebaseConfig = {
-        apiKey: process.env.FIREBASE_API_KEY,
-        authDomain: `${process.env.PROJECT_ID}.firebaseapp.com`,
-        databaseURL: `https://${process.env.PROJECT_ID}-default-rtdb.firebaseio.com`,
-        projectId: process.env.PROJECT_ID,
-        storageBucket: `${process.env.PROJECT_ID}.appspot.com`,
-        messagingSenderId: process.env.MESSAGE_SEND_ID,
-        appId: process.env.FIREBASE_APP_ID
-    };
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
+    async function getDatabase(){
+        const firebaseConfig = {
+            apiKey: process.env.FIREBASE_API_KEY,
+            authDomain: `${process.env.PROJECT_ID}.firebaseapp.com`,
+            databaseURL: `https://${process.env.PROJECT_ID}-default-rtdb.firebaseio.com`,
+            projectId: process.env.PROJECT_ID,
+            storageBucket: `${process.env.PROJECT_ID}.appspot.com`,
+            messagingSenderId: process.env.MESSAGE_SEND_ID,
+            appId: process.env.FIREBASE_APP_ID
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        return db;
+    }
+    const db = await getDatabase();
     return await getHomeState(db).then((home_state) => {
         goOffline(db);
         return res.json({home: home_state});
