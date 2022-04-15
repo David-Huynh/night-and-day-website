@@ -93,10 +93,10 @@ const SpotifyPlayer = () => {
             </a>
             <ColContainer>
                 <ThemeParagraph> 
-                    { song_details.name === '' ? 'Filler' : song_details.name }
+                    { song_details.name === '' ? 'No song is playing' : song_details.name }
                 </ThemeParagraph>
                 <ThemeParagraph>
-                    { song_details.artists.join(', ') === '' ? 'Me' : song_details.artists.join(', ') }
+                    { song_details.artists.join(', ') === '' ? 'No Artists' : song_details.artists.join(', ') }
                 </ThemeParagraph>
                 <RowContainer style={{padding: 0}}>
                     <ProgressBar value={player_details.progress_ms} max={player_details.duration_ms}/>
