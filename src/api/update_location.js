@@ -38,14 +38,21 @@ export default async function update_location(req, res) {
 
     // Verify login and password are set and correct
     if (login && password && login === auth.login && password === auth.password) {
-        const db = await init_db();
-        return await setHomeState(db, req.body.state).then((result) => {
-            goOffline(db);
-            return res.status(200).json(result);
-        }).catch((error) => {
-            console.error(error);
-            return res.status(500).send(error);
-        });
+        const db = await init_db(); 
+        const state = req.body.state;
+        
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        if (req.method === 'POST') {
+            return await setHomeState(db, state).then((result) => {
+                goOffline(db);
+                return res.status(200).json(result);
+            }).catch((error) => {
+                console.error(error);
+                return res.status(500).send(error);
+            });
+        } else {
+            return res.status(405).send('Method not allowed');
+        }
     }
 
     // Access denied...
