@@ -10,7 +10,7 @@ import { useInterval } from "../hooks/useIntervals";
 
 // Spotify player component updates to most recent song played
 const SpotifyPlayer = () => {
-    const delay = 1000;
+    const delay = 2000;
     const [song_details, setSongDetails] = React.useState({
         name: '',
         link: '',
