@@ -7,7 +7,7 @@ const SpotifyPlayer = React.lazy(() => import("../components/spotifyPlayer"));
 
 const IndexPage = () => {
   // 15 minute delay on location update
-  const delay = 900000;
+  const delay = 60000;
   // Fetches whether im at home or not
   const [location, setLocation] = React.useState(false);
   async function retrieveLocation(){
