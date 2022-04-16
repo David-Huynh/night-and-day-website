@@ -48,9 +48,9 @@ const SpotifyPlayer = () => {
             });
             set
         } else {
+            setDelay(30000);
             // Resets state to default values if 10 minutes have passed since the song was played
             if (song_details.played_at + 600000 <  new Date().getTime()) {
-                setDelay(30000);
                 setSongDetails(() => {
                     return {
                         name: '',
