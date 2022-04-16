@@ -10,7 +10,7 @@ import { useInterval } from "../hooks/useIntervals";
 
 // Spotify player component updates to most recent song played
 const SpotifyPlayer = () => {
-    const delay = 2000;
+    const [delay, setDelay] = React.useState(2000);
     const [song_details, setSongDetails] = React.useState({
         name: '',
         link: '',
@@ -26,6 +26,7 @@ const SpotifyPlayer = () => {
     async function setStates(song_data){
         // Only if song_data is not empty do we update the state
         if (song_data && 'name' in song_data) {
+            setDelay(2000);
             // Updates the state with the new song data otherwise
             setSongDetails(() => {
                 return {
@@ -45,9 +46,11 @@ const SpotifyPlayer = () => {
                     duration_ms: song_data.duration_ms,
                 };
             });
+            set
         } else {
             // Resets state to default values if 10 minutes have passed since the song was played
             if (song_details.played_at + 600000 <  new Date().getTime()) {
+                setDelay(30000);
                 setSongDetails(() => {
                     return {
                         name: '',
