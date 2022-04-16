@@ -12,7 +12,7 @@ const IndexPage = () => {
   const [location, setLocation] = React.useState(false);
   async function retrieveLocation(){
     try {
-        const result = await fetch('http://localhost:8000/api/retrieve_location', {method: 'GET'});
+        const result = await fetch('https://dhuynh.ca/api/retrieve_location', {method: 'GET'});
         const location_data = await result.json();
         setLocation(location_data.home === 'true');
     } catch (error) {
