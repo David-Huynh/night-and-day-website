@@ -67,7 +67,7 @@ const IndexPage = () => {
         <SpotifyPlayer />
         <br />
         <p>
-          This is the state variable that I'm using to determine whether I'm at home or not: {location ? "I'm at home" : "I'm not at home"}
+          This is the state variable that I'm using to determine whether I'm at home or not: {location === true ? "I'm at home" : "I'm not at home"}
         </p>
       </Layout>
     </React.Suspense>
