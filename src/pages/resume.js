@@ -43,6 +43,26 @@ const ResumePage = () => {
         </Helmet>
         <GlobalStyles />
         <ResumeStyle>
+          <h2>ExperiencePoint Inc.</h2>
+          <FaLink></FaLink>
+          <ul>
+            <li>
+              Modernized multiple Wordpress pages using custom PHP code, resulting in longer 
+              customer attention
+            </li>
+            <li>
+              Used Angular and tailwind to create and design a multi-step workshop booking 
+              system that works seamlessly on mobile and desktop
+            </li>
+            <li>
+              Integrated with AdZapier and TARS for a fully featured cookie consent banner and 
+              chatbot
+            </li>
+            <li>
+              Discovered and explored migrating our website to Webflow and EditorX, which would 
+              have reduced developer time to zero
+            </li>
+          </ul>
           <a
             href="https://docs.google.com/document/d/1v_za99w6o9s4XS2CSu8SJrn6ThQJg2smcrfT_m9N2MU/edit#"
             rel="noopener noreferrer"
