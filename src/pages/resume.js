@@ -43,10 +43,10 @@ const ResumePage = () => {
         </Helmet>
         <GlobalStyles />
         <ResumeStyle>
-          <div>
+          <a>
             <h2>ExperiencePoint Inc.</h2>
             <FaLink></FaLink>
-          </div>
+          </a>
           <ul>
             <li>
               Increased customer engagement by modernizing and QA testing multiple Wordpress pages using custom PHP code.
