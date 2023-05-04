@@ -7,7 +7,7 @@ import LogoSpinner from "../components/spinner";
 const Layout = React.lazy(() => import("../components/layout"));
 
 const ResumeStyle = styled.div`
-  a{
+  a,div{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -43,10 +43,10 @@ const ResumePage = () => {
         </Helmet>
         <GlobalStyles />
         <ResumeStyle>
-          <a>
+          <div>
             <h2>ExperiencePoint Inc.</h2>
             <FaLink></FaLink>
-          </a>
+          </div>
           <ul>
             <li>
               Increased customer engagement by modernizing and QA testing multiple Wordpress pages using custom PHP code.
