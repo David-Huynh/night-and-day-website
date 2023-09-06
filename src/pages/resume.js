@@ -7,7 +7,7 @@ import LogoSpinner from "../components/spinner";
 const Layout = React.lazy(() => import("../components/layout"));
 
 const ResumeStyle = styled.div`
-  a{
+  a,div{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -43,24 +43,25 @@ const ResumePage = () => {
         </Helmet>
         <GlobalStyles />
         <ResumeStyle>
-          <h2>ExperiencePoint Inc.</h2>
-          <FaLink></FaLink>
+          <div>
+            <h2>ExperiencePoint Inc.</h2>
+            <FaLink></FaLink>
+          </div>
           <ul>
             <li>
-              Modernized multiple Wordpress pages using custom PHP code, resulting in longer 
-              customer attention
+              Increased customer engagement by modernizing and QA testing multiple Wordpress pages using custom PHP code.
             </li>
             <li>
-              Used Angular and tailwind to create and design a multi-step workshop booking 
-              system that works seamlessly on mobile and desktop
+              Developed a mobile-friendly, multi-step workshop booking system using Angular and Tailwind, 
+              resulting in a seamless experience across both desktop and mobile devices.
             </li>
             <li>
               Integrated with AdZapier and TARS for a fully featured cookie consent banner and 
               chatbot
             </li>
             <li>
-              Discovered and explored migrating our website to Webflow and EditorX, which would 
-              have reduced developer time to zero
+              Modernized Experience Innovation Learn from a legacy AngularJS codebase to a fully tested Angular utilizing Ngrx
+              Store resulting in a reduction of bugs, and a more streamlined and efficient codebase
             </li>
           </ul>
           <a
@@ -68,7 +69,7 @@ const ResumePage = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <h2>FarmLink Marketing Solutions (Grainfox)</h2>
+            <h2>FarmLink Marketing Solutions</h2>
             <FaLink></FaLink>
           </a>
           <ul>
@@ -135,8 +136,7 @@ const ResumePage = () => {
               web design practices
             </li>
             <li>
-              Efficient SQL queries resulted in faster load times and better user
-              experience
+              Optimized SQL queries resulted in faster load times and better user experience
             </li>
           </ul>
           <a
